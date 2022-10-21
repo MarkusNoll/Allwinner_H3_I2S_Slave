@@ -10,5 +10,6 @@ PA21 -> I2S-DIN
 <b>Second step:</b> Build and install devicetree overlay with  <b>$armbian-add-overlay sun8i-h3-i2s0-slave.dts</b><br>
 <b>Third step:</b> Reboot<br>
 <b>Fourth step:</b> As the codec-kernel module is only compiled, but not installed, you have to load it manually with <b>$sudo insmod spdif-rxtx.ko</b><br><br>
-Afterwards, you can check if the devices are present with <b>$aplay -l</b> or <b>$arecord -l</b>
+Afterwards, you can check if the devices are present with <b>$aplay -l</b> or <b>$arecord -l</b><br>
+![Alsa IO](alsa-i2s.JPG?raw=true "Alsa IO")
 
