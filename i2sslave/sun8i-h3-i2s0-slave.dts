@@ -1,0 +1,47 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+	compatible = "allwinner,sun8i-h3";
+
+	fragment@0 {
+		target = <&i2s0>;
+		__overlay__ {
+			pinctrl-0 = <&i2s0_pins>;
+			pinctrl-names = "default";
+			status = "okay";
+		};
+	};
+
+	fragment@1 {
+		target-path = "/";
+		__overlay__ {
+			codec_dummy: codec_dummy {
+                #address-cells = <0>;
+                #size-cells = <0>;
+                #sound-dai-cells = <0>;
+				compatible = "linux,spdif-rxtx";
+			};
+
+			sound_i2s {
+				simple-audio-card,name = "I2S RXTX";
+				compatible = "simple-audio-card";
+				simple-audio-card,format = "i2s";
+				simple-audio-card,bitclock-master = <&codec_dai>; 
+				simple-audio-card,frame-master = <&codec_dai>; 
+				simple-audio-card,mclk-fs = <256>;
+				status = "okay";
+
+				simple-audio-card,cpu {
+					sound-dai = <&i2s0>;
+					dai-tdm-slot-num = <2>;
+                    dai-tdm-slot-width = <32>;
+				};
+
+				codec_dai: simple-audio-card,codec {
+					sound-dai = <&codec_dummy>;
+				};
+			};
+		};
+	};
+};
