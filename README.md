@@ -6,9 +6,9 @@ PA18 -> I2S-WCLK<br>
 PA20 -> I2S-OUT<br>
 PA21 -> I2S-DIN
 <br><br>
-Firs step: Build the dummy-codec kernel-module. Just enter "$make" <br>
-Second step: Build and install devicetree overlay with  "$armbian-add-overlay sun8i-h3-i2s0-slave.dts"<br>
-Third step: Reboot
-Fourth step: As the codec-kernel module is only compiled, but not installed, you have to load it manually with "$sudo insmod spdif-rxtx.ko"<br><br>
-Afterwards, you can check if the devices are present with "$aplay -l" or "$arecord -l"
+<b>First step:</b> Build the dummy-codec kernel-module. Just enter <b>$make</b> <br>
+<b>Second step:</b> Build and install devicetree overlay with  <b>$armbian-add-overlay sun8i-h3-i2s0-slave.dts</b><br>
+<b>Third step:</b> Reboot<br>
+<b>Fourth step:</b> As the codec-kernel module is only compiled, but not installed, you have to load it manually with <b>$sudo insmod spdif-rxtx.ko</b><br><br>
+Afterwards, you can check if the devices are present with <b>$aplay -l</b> or <b>$arecord -l</b>
 
