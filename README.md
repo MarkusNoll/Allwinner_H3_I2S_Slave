@@ -6,7 +6,7 @@ PA18 -> I2S-WCLK<br>
 PA20 -> I2S-OUT<br>
 PA21 -> I2S-DIN
 <br><br>
-I tested in following configuration: wclk=48kHz, bclk=3.072MHz, 2*32 Bit framing<br>br>
+I tested in following configuration: wclk=48kHz, bclk=3.072MHz, 2*32 Bit framing<br><br>
 <b>First step:</b> Build the dummy-codec kernel-module. Just enter <b>$make</b>. Make sure Kernel-Headers are available for your platform. <br>
 <b>Second step:</b> Build and install devicetree overlay with  <b>$armbian-add-overlay sun8i-h3-i2s0-slave.dts</b><br>
 <b>Third step:</b> Reboot<br>
