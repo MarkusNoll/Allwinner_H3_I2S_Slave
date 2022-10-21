@@ -18,4 +18,4 @@ Afterwards, try making a loopback with: <b>alsaloop -C hw:1,0 -P hw:1,0</b>...
 In case you're playing something with MPV or record something, make sure you have set the correct sample-rate.<br>
 <b>$ arecord -f S16_LE -r 48000 -c 2 -d 10 -D "hw:1,0" test.wav</b><br>
 
-<b>mpv https://edge01.stream.charivari.de/955charivari-webradio?aggregator=charivari_de_link --audio-display=no --audio-channels=stereo --audio-samplerate=48000 --audio-format=s32 --ao=alsa -audio-device=alsa/plughw:CARD=DAC,DEV=0</b>
+<b>$mpv https://edge01.stream.charivari.de/955charivari-webradio?aggregator=charivari_de_link --audio-display=no --audio-channels=stereo --audio-samplerate=48000 --audio-format=s32 --ao=alsa -audio-device=alsa/plughw:CARD=DAC,DEV=0</b>
